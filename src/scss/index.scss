@@ -1,0 +1,65 @@
+// Import vào. để có thể biên dịch
+@use "components/header";
+@use "base/reset.scss";
+@use "components/hero";
+@use "components/feature-products";
+@use "components/footer";
+
+// -- Utils --
+@use "helper" as H;
+// -- Utils
+.container {
+  margin-right: 2rem;
+  margin-left: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+// --
+// .fa-star,
+// .icon-cart {
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   display: inline-block;
+// }
+// -- Place holder --
+%icon {
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+}
+
+.fa-star {
+  background-image: url("/imgs/star.svg");
+  width: 2.4rem;
+  height: 2.4rem;
+
+  @extend %icon;
+}
+
+.icon-cart {
+  background-image: url("/imgs/cart.svg");
+  width: 1.6rem;
+  height: 1.6rem;
+
+  @extend %icon;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+
+  // --
+  $lg: 62.5em;
+  $md: 37.5em;
+
+  // < 1000px red
+  @media screen and (max-width: $lg) {
+    color: red;
+  }
+
+  // < 600px green
+  @media screen and (max-width: $md) {
+    color: green;
+  }
+}
